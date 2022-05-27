@@ -154,6 +154,9 @@ fun WearApp(
                     }
                 )
             }
+            composable(Screen.Haptics.route) {
+                HapticsScreen()
+            }
         }
     }
 }

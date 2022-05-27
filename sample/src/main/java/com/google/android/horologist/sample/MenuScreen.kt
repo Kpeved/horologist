@@ -64,6 +64,9 @@ fun MenuScreen(
             VolumeScreenChip(navigateToRoute)
         }
         item {
+            HapticsScreenChip(navigateToRoute)
+        }
+        item {
             FadeAwayChip("Fade Away") { navigateToRoute(Screen.FadeAway.route) }
         }
         item {

@@ -87,6 +87,14 @@ fun VolumeScreenChip(navigateToRoute: (String) -> Unit) {
 }
 
 @Composable
+fun HapticsScreenChip(navigateToRoute: (String) -> Unit) {
+    SampleChip(
+        onClick = { navigateToRoute(Screen.Haptics.route) },
+        label = "Haptics",
+    )
+}
+
+@Composable
 fun TimePickerChip(
     time: LocalDateTime,
     navigateToRoute: (String) -> Unit

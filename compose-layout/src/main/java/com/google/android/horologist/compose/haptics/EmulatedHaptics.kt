@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.android.horologist.networks.okhttp
+package com.google.android.horologist.compose.haptics
 
-import okhttp3.Interceptor
-import okhttp3.Response
+public object EmulatedHaptics : HapticAction {
+    override fun performScrollTick() {
+        println("performScrollTick")
+    }
 
-public object AlwaysHttpsInterceptor : Interceptor {
-    override fun intercept(chain: Interceptor.Chain): Response {
-        var request = chain.request()
+    override fun performClick() {
+        println("performScrollClick")
+    }
 
-        if (request.url.scheme == "http") {
-            request = request.newBuilder().url(
-                request.url.newBuilder().scheme("https").build()
-            ).build()
-        }
-
-        return chain.proceed(request)
+    override fun performOverscroll() {
+        println("performScrollHeavyClick")
     }
 }
